@@ -59,7 +59,7 @@ resource "aws_instance" "web" {
   instance_type          = "${var.instance_type}"
   count                  = "${var.instance_count}"
   vpc_security_group_ids = ["${data.terraform_remote_state.sg.security_group_id}"]
-  subnet_id              = "${data.terraform_remote_state.vpc.subnet_id.[0]}"
+  subnet_id              = "${element(data.terraform_remote_state.vpc.subnet_id, 0)}"
   user_data              = "${data.template_file.userdata.rendered}"
 
   tags {
