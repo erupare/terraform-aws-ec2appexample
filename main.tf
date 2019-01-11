@@ -63,6 +63,6 @@ resource "aws_instance" "web" {
   user_data              = "${data.template_file.userdata.rendered}"
 
   tags {
-    Name = "web_ + ${count.index}"
+    Name = "web_${count.index}"
   }
 }
