@@ -1,7 +1,7 @@
-output "aws_security_group_id" {
-  value = "${aws_security_group.allow_all.id}"
+output "id" {
+  value = "${aws_instance.web.id}"
 }
 
-output "aws_security_group_arn" {
-  value = "${aws_security_group.allow_all.arn}"
+output "arn" {
+  value = "${aws_instance.web.arn}"
 }
