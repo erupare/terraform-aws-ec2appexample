@@ -62,7 +62,5 @@ resource "aws_instance" "web" {
   subnet_id              = "${element(data.terraform_remote_state.vpc.subnet_id, 0)}"
   user_data              = "${data.template_file.userdata.rendered}"
 
-  tags {
-    Name = "web_${count.index}"
-  }
+  tags = "${var.tags}"
 }

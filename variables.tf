@@ -27,6 +27,7 @@ variable "tags" {
   type = "map"
 
   default = {
+    Name = "Stenio Test"
     Owner = "Stenio Ferreira"
     TTL = "48"
     Environment = "dev"
